@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <h5 class="card-header">
+        Name
+      </h5>
+      <div class="card-body">
+        <%= @attendee.name %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <h5 class="card-header">
+        Phone Number
+      </h5>
+      <div class="card-body">
+        <a href="tel:<%= @attendee.phone %>"><%= @attendee.phone %></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <h5 class="card-header">
+        Address
+      </h5>
+      <div class="card-body">
+        <%= @attendee.address %>
+        <br>
+        <%= @attendee.city %>, <%= @attendee.state %>, <%= @attendee.zip %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <h5 class="card-header">
+        Medications
+      </h5>
+      <div class="card-body">
+        <% @attendee.medications.each do |medication| %>
+          <%= medication.name %> - <%= medication.strength %><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'Edit', edit_attendee_path(@attendee), class: 'btn btn-sm btn-outline-info' %>
+<%= link_to 'Delete', attendee_path(@attendee), method: :destroy, data: { confirm: "Are you sure you want to delete '#{@attendee.name}'?" }, class: 'btn btn-sm btn-outline-danger' %>

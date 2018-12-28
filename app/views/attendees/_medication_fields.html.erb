@@ -1,0 +1,19 @@
+<div class='nested-fields'>
+  <div class="form-row">
+    <div class='col'>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col'>
+      <div class="form-group">
+        <%= f.label :strength %>
+        <%= f.text_field :strength, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col'>
+      <%= link_to_remove_association "remove medication", f, class: 'btn btn-danger remove_association_btn' %>
+    </div>
+  </div>
+</div>

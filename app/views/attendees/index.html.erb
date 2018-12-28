@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='text-center'>Attendees</h1>
+<div class='text-center'>
+  <%= link_to 'New Attendee', new_attendee_path, class: 'btn btn-sm btn-outline-primary' %>
+</div>
+
+<br>
+
+<div class="row">
+  <% @attendees.each do |attendee| %>
+    <div class="col-md-4">
+      <div class="card text-center mt-3">
+        <div class="card-header">
+          <h4><%= link_to attendee.name, attendee %></h4>
+        </div>
+        <div class="card-body">
+          <% attendee.medications.each do |medication| %>
+          <p><%= medication.name %> - <%= medication.strength %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-6 col-offset-sm-3">
+    <div class="pagination">
+      <%= will_paginate @attendees, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+  </div>
+</div>
