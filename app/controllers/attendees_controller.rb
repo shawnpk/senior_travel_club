@@ -4,7 +4,7 @@ class AttendeesController < ApplicationController
   # GET /attendees
   # GET /attendees.json
   def index
-    @attendees = Attendee.order(name: :asc).paginate(page: params[:page]).per_page(12)
+    @attendees = Attendee.order(name: :asc).page(params[:page])
   end
 
   # GET /attendees/1

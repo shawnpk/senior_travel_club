@@ -26,10 +26,6 @@
 
 <br>
 
-<div class="row">
-  <div class="col-sm-6 col-offset-sm-3">
-    <div class="pagination">
-      <%= will_paginate @attendees, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-    </div>
-  </div>
+<div class="text-xs-center">
+  <%= paginate @attendees, theme: 'twitter-bootstrap-4' %>
 </div>
