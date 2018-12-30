@@ -55,4 +55,4 @@
 <br>
 
 <%= link_to 'Edit', edit_attendee_path(@attendee), class: 'btn btn-sm btn-outline-info' %>
-<%= link_to 'Delete', attendee_path(@attendee), method: :destroy, data: { confirm: "Are you sure you want to delete '#{@attendee.name}'?" }, class: 'btn btn-sm btn-outline-danger' %>
+<%= link_to 'Delete', attendee_path(@attendee), method: :delete, data: { confirm: "Are you sure you want to delete '#{@attendee.name}'?" }, class: 'btn btn-sm btn-outline-danger' %>
