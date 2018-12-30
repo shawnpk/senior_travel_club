@@ -1,3 +1,19 @@
 .remove_association_btn {
   margin-top: 32px;
 }
+
+.card {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .search-btn {
+    margin-left: -15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-btn {
+    margin-left: 0;
+  }
+}

@@ -4,7 +4,10 @@ class AttendeesController < ApplicationController
   # GET /attendees
   # GET /attendees.json
   def index
-    @attendees = Attendee.order(name: :asc).page(params[:page])
+    @q = Attendee.ransack(params[:q])
+    @q.sorts = 'name asc' if @q.sorts.empty?
+    @attendees = @q.result.page(params[:page])
+    # @attendees = Attendee.order(name: :asc).page(params[:page])
   end
 
   # GET /attendees/1

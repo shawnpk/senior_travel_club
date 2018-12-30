@@ -2,12 +2,23 @@
 
 <h1 class='text-center'>Attendees</h1>
 <div class='text-center'>
-  <%= link_to 'New Attendee', new_attendee_path, class: 'btn btn-sm btn-outline-primary' %>
+  <%= link_to 'Create New Attendee', new_attendee_path, class: 'btn btn-primary' %>
 </div>
 
 <br>
 
 <%= paginate @attendees, theme: 'twitter-bootstrap-4' %>
+
+<%= search_form_for @q do |f| %>
+  <div class="row">
+    <div class="col-sm-8">
+      <%= f.search_field :name_cont, class: 'form-control search-field', placeholder: 'Search...' %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.submit class: 'btn btn-secondary search-btn' %>
+    </div>
+  </div>
+<% end %>
 
 <div class="row">
   <% @attendees.each do |attendee| %>
